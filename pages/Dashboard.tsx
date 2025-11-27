@@ -7,6 +7,9 @@ import SEODashboard from '../components/dashboard/SEODashboard';
 import AppStoreOptimizationDashboard from '../components/dashboard/ASODashboard';
 import SocialMediaDashboard from '../components/dashboard/SocialMediaDashboard';
 import MarketplaceDashboard from '../components/dashboard/MarketplaceDashboard';
+import EmailDashboard from '../components/dashboard/EmailDashboard';
+import BlogDashboard from '../components/dashboard/BlogDashboard';
+import BacklinksDashboard from '../components/dashboard/BacklinksDashboard';
 import { services, stats } from '../lib/dashboard-data';
 
 const Dashboard: React.FC = () => {
@@ -152,6 +155,12 @@ const Dashboard: React.FC = () => {
                 <SocialMediaDashboard />
             ) : selectedService === 'marketplaces' ? (
                 <MarketplaceDashboard />
+            ) : selectedService === 'email' ? (
+                <EmailDashboard />
+            ) : selectedService === 'blog' ? (
+                <BlogDashboard />
+            ) : selectedService === 'backlinks' ? (
+                <BacklinksDashboard />
             ) : (
                 <>
                     {/* Optimisation Analytics (Category Level) */}
