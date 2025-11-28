@@ -33,8 +33,10 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin }) => {
         </div>
 
       <motion.div 
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
+        {...({
+            initial: { opacity: 0, scale: 0.95 },
+            animate: { opacity: 1, scale: 1 }
+        } as any)}
         className="w-full max-w-md bg-white dark:bg-[#001c4d] border border-gray-200 dark:border-white/10 rounded-3xl p-8 shadow-2xl relative z-10"
       >
         <div className="text-center mb-8">

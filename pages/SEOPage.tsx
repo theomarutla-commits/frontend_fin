@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, Globe, Zap, BarChart, Bot } from 'lucide-react';
@@ -32,8 +33,10 @@ const SEOPage: React.FC = () => {
       <div className="w-[90%] lg:w-[90%] mx-auto">
         <div className="text-center mb-16">
           <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            {...({
+                initial: { opacity: 0, y: 20 },
+                animate: { opacity: 1, y: 0 }
+            } as any)}
             className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white"
           >
             Dominate <span className="text-icy-main">Search & AI</span>
@@ -47,9 +50,11 @@ const SEOPage: React.FC = () => {
           {features.map((f, i) => (
             <motion.div 
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
+              {...({
+                  initial: { opacity: 0, y: 20 },
+                  whileInView: { opacity: 1, y: 0 },
+                  transition: { delay: i * 0.1 }
+              } as any)}
               className="bg-white dark:bg-[#002466]/40 p-8 rounded-3xl border border-gray-200 dark:border-white/10 hover:border-icy-main transition-colors"
             >
               <div className="w-12 h-12 bg-icy-main/10 text-icy-main rounded-xl flex items-center justify-center mb-6">
